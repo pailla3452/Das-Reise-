@@ -1,30 +1,20 @@
-# reise
+# Das Reise!!!  ☺
 
-> asf
-
-## Build Setup
+> Site de voyage. Ici le personnes peuvent partager leurs experiences à l'étranger!
+> Ce site a été créé avec Vuejs, Vuetify, Vuex et la base des données et geré avec Firebase.
+## Rôle des associés du groupe
 
 ``` bash
-# install dependencies
-npm install
+# Ignacio Paillalef Sammur
+Il va faire une longue et grande étude sur la base de données travaillée déjà sur son TM mais instauré à notre faveur, ce qui nous permettra de stocker sur FIREBASE en utilisant aussi vuex.
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Daniel Gil Fraga
+Il va travailler sur vuetify et vuejs
 
-# build for production with minification
-npm run build
+# Ali Mehdi
+Il va travailler sur la basse de données et vuetify.
 
-# build for production and view the bundle analyzer report
-npm run build --report
+#Optionnel
+API googlemaps
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
