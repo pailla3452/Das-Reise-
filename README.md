@@ -6,13 +6,13 @@
 
 ``` bash
 # Ignacio Paillalef Sammur
-Il va faire une longue et grande étude sur la base de données travaillée déjà sur son TM mais instauré à notre faveur, ce qui nous permettra de stocker sur FIREBASE en utilisant aussi vuex.
+Il va travailler sur Firebase et vuex
 
 # Daniel Gil Fraga
 Il va travailler sur vuetify et vuejs
 
 # Ali Mehdi
-Il va travailler sur la basse de données et vuetify.
+Il va travailler sur la basse de données Firebase et vuetify.
 
 #Optionnel
 API googlemaps
