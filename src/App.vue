@@ -1,5 +1,8 @@
 <template>
   <v-app>
+    <v-navigation>
+
+    </v-navigation>
     <main>
       <router-view></router-view>
     </main>
@@ -10,17 +13,11 @@
   export default {
     data () {
       return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [{
-          icon: 'bubble_chart',
-          title: 'Inspire'
-        }],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'Vuetify.js'
+        menuItems: [
+          {text: 'Se connecter', icon: '', link: ''},
+          {text: 'Créer une conte', icon: '', link: ''},
+          {text: 'Explorer', icon: 'explore', link: ''}
+        ]
       }
     }
   }
