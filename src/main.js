@@ -8,6 +8,7 @@ import './stylus/main.styl'
 
 import App from './App'
 import router from './router'
+import { store } from './store'
 
 import firebase from 'firebase'
 
@@ -19,8 +20,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App },
+  store,
+  render: h => h(App)
   created (){
     // Set the configuration for your app
 // TODO: Replace with your project's config object
