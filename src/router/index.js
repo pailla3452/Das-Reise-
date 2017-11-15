@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 // COMPONENTS
 import Home from '@/components/Home'
-import Signin from '../components/user/Signup'
-import Signup from '../components/user/Signin'
+import Signin from '@/components/User/Signin'
+import Signup from '@/components/User/Signup'
 
 Vue.use(Router)
 
