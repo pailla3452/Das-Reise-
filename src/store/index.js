@@ -9,10 +9,14 @@ export const store = new Vuex.Store({
       icon: '',
       text: 'Reise!',
       color: 'primary',
-      colorFluid: 'primary--text' 
+      colorFluid: 'primary--text'
     }
   },
   mutations: {},
-  getters: {},
+  getters: {
+    toolbarInfo (state) {
+      return state.toolbarInfo
+    }
+  },
   actions: {}
 })

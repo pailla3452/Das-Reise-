@@ -11,16 +11,6 @@
           </v-list-tile-action>
           <v-list-tile-content>{{item.title}}</v-list-tile-content>
         </v-list-tile>
-        <v-divider></v-divider>
-        <v-list-tile
-        v-if="userIsAuthenticated"
-        @click="onSignOut"
-        class="mt-2">
-          <v-list-tile-action>
-            <v-icon>exit_to_app</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>Log out</v-list-tile-content>
-        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
 
@@ -66,10 +56,15 @@
     data () {
       return {
         menuItems: [
-          {text: 'Se connecter', icon: '', link: ''},
-          {text: 'Créer une conte', icon: '', link: ''},
-          {text: 'Explorer', icon: 'explore', link: ''}
+          {icon: 'face', title: 'Sign up', link: '/signup'},
+          {icon: 'lock_open', title: 'Sign in', link: '/signin'},
+          {icon: 'explore', title: 'Explorer', link: '/'}
         ]
+      }
+    },
+    computed: {
+      toolbarInfo () {
+        return this.$store.getters.toolBarInfo
       }
     }
   }
