@@ -9,6 +9,8 @@ import './stylus/main.styl'
 import App from './App'
 import router from './router'
 
+import firebase from 'firebase'
+
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false
