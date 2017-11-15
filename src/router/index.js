@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 // COMPONENTS
 import Home from '@/components/Hello'
+import Signin from '@/components/Signup.vue'
+import Signup from '@/components/Signin.vue'
 
 Vue.use(Router)
 
@@ -14,14 +16,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
     },
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
     }
   ]
 })
