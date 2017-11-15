@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!-- SIDEBAR -->
     <v-navigation-drawer temporary v-model="sideNav">
       <v-list>
         <v-list-tile
@@ -38,11 +39,6 @@
           <v-icon left>{{item.icon}}</v-icon>
           {{item.title}}
         </v-btn>
-        <v-btn flat
-        @click="onSignOut"
-        v-if="userIsAuthenticated">
-          <v-icon left>exit_to_app</v-icon>
-        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <main>
@@ -59,7 +55,8 @@
           {icon: 'face', title: 'Sign up', link: '/signup'},
           {icon: 'lock_open', title: 'Sign in', link: '/signin'},
           {icon: 'explore', title: 'Explorer', link: '/'}
-        ]
+        ],
+        sideNav: false
       }
     },
     computed: {

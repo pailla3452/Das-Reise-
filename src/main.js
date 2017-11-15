@@ -22,7 +22,7 @@ new Vue({
   router,
   store,
   render: h => h(App)
-  created (){
+  created () {
     // Set the configuration for your app
 // TODO: Replace with your project's config object
     var config = {
