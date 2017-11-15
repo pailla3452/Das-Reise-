@@ -56,12 +56,13 @@
           {icon: 'lock_open', title: 'Sign in', link: '/signin'},
           {icon: 'explore', title: 'Explorer', link: '/'}
         ],
-        sideNav: false
-      }
-    },
-    computed: {
-      toolbarInfo () {
-        return this.$store.getters.toolBarInfo
+        sideNav: false,
+        toolbarInfo: {
+          icon: '',
+          text: 'Reise!',
+          color: 'primary',
+          colorFluid: 'primary--text'
+        }
       }
     }
   }
