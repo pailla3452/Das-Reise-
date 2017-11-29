@@ -22,7 +22,12 @@
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up "></v-toolbar-side-icon>
       <!-- Toolbar :B -->
-
+      <v-toolbar-title>
+        <router-link flat to='/' tag='span' style="cursor: pointer">
+           <v-icon left dark class="mr-1 mb-1">{{toolbarInfo.icon}}</v-icon>
+           {{toolbarInfo.text}}
+         </router-link>
+      </v-toolbar-title>
       <v-spacer></v-spacer >
       <v-toolbar-items class="hidden-xs-only">
         <!-- Array of MENU ITEMS -->
