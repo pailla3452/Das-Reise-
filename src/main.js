@@ -21,16 +21,16 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
   created () {
     // Set the configuration for your app
-// TODO: Replace with your project's config object
+    // TODO: Replace with your project's config object
     var config = {
       apiKey: 'AIzaSyDowMD6PPZkm736WvsBn8ilEae-CisS_l8',
       authDomain: 'das-reise.firebaseapp.com',
       databaseURL: 'https://das-reise.firebaseio.com',
       projectId: 'das-reise'
-      }
-  firebase.initializeApp(config)
+    }
+    firebase.initializeApp(config)
   }
 })
