@@ -52,9 +52,9 @@
     data () {
       return {
         menuItems: [
-          {icon: 'face', title: 'Sign up', link: '/signup'},
-          {icon: 'lock_open', title: 'Sign in', link: '/signin'},
-          {icon: 'explore', title: 'Explorer', link: '/'}
+          {icon: 'face', title: 'Aufnehmen', link: '/signup'},
+          {icon: 'lock_open', title: 'Einfragem', link: '/signin'},
+          {icon: 'explore', title: 'Forscher', link: '/'}
         ],
         sideNav: false,
         toolbarInfo: {
