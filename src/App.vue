@@ -51,11 +51,7 @@
   export default {
     data () {
       return {
-        menuItems: [
-          {icon: 'face', title: 'Aufnehmen', link: '/signup'},
-          {icon: 'lock_open', title: 'Einfragem', link: '/signin'},
-          {icon: 'explore', title: 'Forscher', link: '/'}
-        ],
+
         sideNav: false,
         toolbarInfo: {
           icon: '',
@@ -64,7 +60,26 @@
           colorFluid: 'primary--text'
         }
       }
+    },
+    computed: {
+      menuItems () {
+        let menuItems = [
+          {icon: 'face', title: 'Aufnehmen', link: '/signup'},
+          {icon: 'lock_open', title: 'Einfragem', link: '/signin'},
+          {icon: 'explore', title: 'Forscher', link: '/'}
+        ]
+        if (this.userIsAuthenticated) {
+          menuItems = [
+            {icon: 'account_circle', title: 'Profil', link: '/profil'},
+            {icon: 'flight', title: 'Meine Reisen', link: '/profil'},
+            {icon: 'explore', title: 'Forscher', link: '/'}
+          ]
+        }
+        return menuItems
+      },
+      userIsAuthenticated () {
+        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+      }
     }
   }
-
 </script>
