@@ -56,7 +56,7 @@ export default {
       return this.$store.getters.user
     },
     formIsValid () {
-      return email !== '' && email !== undefined
+      return this.email !== '' && this.email !== undefined
     }
   },
   watch: {
