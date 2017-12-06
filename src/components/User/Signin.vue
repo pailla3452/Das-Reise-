@@ -54,18 +54,24 @@ export default {
   computed: {
     user () {
       return this.$store.getters.user
+    },
+    formIsValid () {
+      return email !== '' && email !== undefined
     }
   },
   watch: {
     user (value) {
       if (value !== null && value !== undefined) {
-        this.$router.push('/')
       }
     }
   },
   methods: {
     onSignin () {
+      if (!formIsValid) {
+        return
+      }
       this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
+      this.$router.push('/')
     }
   }
 }
