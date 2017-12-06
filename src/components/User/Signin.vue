@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     onSignin () {
-      if (!formIsValid) {
+      if (!this.formIsValid) {
         return
       }
       this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
