@@ -42,5 +42,10 @@ new Vue({
       projectId: 'das-reise'
     }
     firebase.initializeApp(config)
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('autoSignIn', user)
+      }
+    })
   }
 })

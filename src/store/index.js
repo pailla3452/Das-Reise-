@@ -22,43 +22,44 @@ export const store = new Vuex.Store({
   getters: {
     toolbarInfo (state) {
       return state.toolbarInfo
+    },
+    user (state) {
+      return state.user
     }
-  },
-  user (state) {
-    return state.user
   },
   actions: {
     signUserUp ({commit}, payload) {
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
-        .then(
-          user => {
-            const newUser = {
-              id: user.uid
-            }
-            commit('setUser', newUser)
+        .then((user) => {
+          const newUser = {
+            id: user.uid
           }
-        )
-        .catch(
-          error => {
-            console.log(error)
-          }
-        )
+          console.log(newUser)
+          commit('setUser', {id: newUser.id})
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     },
-    sighUserIn ({commit}, payload) {
+    signUserIn ({commit}, payload) {
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
-        .then(
-          user => {
-            const newUser = {
-              id: user.uid
-            }
-            commit('setUser', newUser)
+        .then((user) => {
+          const newUser = {
+            id: user.uid
           }
-        )
-        .catch(
-          error => {
-            console.log(error)
-          }
-        )
+          console.log(newUser)
+          commit('setUser', {id: newUser.id})
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    autoSignIn ({commit}, payload) {
+      commit('setUser', {id: payload.uid})
+    },
+    logOut ({commit}, payload) {
+      firebase.auth().signOut()
+      commit('setUser', null)
     }
   }
 })

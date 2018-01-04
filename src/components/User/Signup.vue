@@ -70,16 +70,10 @@
         return this.store.getters.user
       }
     },
-    watcher: {
-      user (value) {
-        if (value !== null && value !== undefined) {
-          this.$router.push('/')
-        }
-      }
-    },
     methods: {
       onSignup () {
         this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
+        this.$router.push('/')
       }
     }
   }

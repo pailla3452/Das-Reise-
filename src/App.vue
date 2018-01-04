@@ -39,6 +39,14 @@
           <v-icon left>{{item.icon}}</v-icon>
           {{item.title}}
         </v-btn>
+        <!-- LOG OUT -->
+        <v-btn flat
+        @click="onLogOut"
+        v-if="userIsAuthenticated"
+        >
+          <v-icon left>exit_to_app </v-icon>
+          Log out
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <main>
@@ -51,7 +59,6 @@
   export default {
     data () {
       return {
-
         sideNav: false,
         toolbarInfo: {
           icon: '',
@@ -64,21 +71,27 @@
     computed: {
       menuItems () {
         let menuItems = [
-          {icon: 'face', title: 'Aufnehmen', link: '/signup'},
-          {icon: 'lock_open', title: 'Einfragen', link: '/signin'},
-          {icon: 'explore', title: 'Forscher', link: '/world'}
+          {icon: 'face', title: 'Sign up', link: '/signup'},
+          {icon: 'lock_open', title: 'Sign in', link: '/signin'},
+          {icon: 'explore', title: 'Maps', link: '/world'}
         ]
         if (this.userIsAuthenticated) {
           menuItems = [
             {icon: 'account_circle', title: 'Profil', link: '/profil'},
             {icon: 'flight', title: 'Meine Reisen', link: '/profil'},
-            {icon: 'explore', title: 'Forscher', link: '/'}
+            {icon: 'explore', title: 'Forscher', link: '/world'}
           ]
         }
         return menuItems
       },
       userIsAuthenticated () {
         return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+      }
+    },
+    methods: {
+      onLogOut () {
+        this.$store.dispatch('logOut')
+        this.$router.push('/signin')
       }
     }
   }

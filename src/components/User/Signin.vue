@@ -1,5 +1,4 @@
 <template lang="html">
-
   <v-container>
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
@@ -57,12 +56,6 @@ export default {
     },
     formIsValid () {
       return this.email !== '' && this.email !== undefined
-    }
-  },
-  watch: {
-    user (value) {
-      if (value !== null && value !== undefined) {
-      }
     }
   },
   methods: {
