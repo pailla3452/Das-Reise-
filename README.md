@@ -1,6 +1,6 @@
 # Das Reise!!!  ☺
 
-> Site de voyage. Ici le personnes peuvent partager leurs experiences à l'étranger!
+> Site de voyage. Ici les personnes peuvent partager leurs experiences à l'étranger!
 > Ce site a été créé avec Vuejs, Vuetify, Vuex et la base des données et geré avec Firebase.
 ## Rôle des associés du groupe
 
