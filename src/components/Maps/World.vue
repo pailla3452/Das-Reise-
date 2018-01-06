@@ -2,7 +2,7 @@
   <gmap-map
     :center="center"
     :zoom="3"
-    style="width: 10%; height: 100%; "
+    style="width: 100%; height: 100%; "
   >
     <gmap-marker
       :key="index"
@@ -10,7 +10,9 @@
       :position="m.position"
       :clickable="true"
       :draggable="true"
-      @click="center=m.position"
+      :editable="true"
+      @click="onSelect(m)"
+      @dragend="onNewPosition(m)"
     ></gmap-marker>
   </gmap-map>
 </template>
@@ -20,11 +22,20 @@ export default {
   data () {
     return {
       center: {lat: 52.5170365, lng: 13.3888599},
-      markers: [{
-        position: {lat: 52.5170365, lng: 13.3888599}
-      }, {
-        position: {lat: 39.0046949, lng: 125.7358714}
-      }]
+      markers: [
+        {
+          position: {lat: 52.5170365, lng: 13.3888599}
+        },
+        {
+          position: {lat: 39.0046949, lng: 125.7358714}
+        }
+      ]
+    }
+  },
+  methods: {
+    onSelect (m) {
+      console.log(m.getPosition())
+      this.center = m.position
     }
   }
 }
