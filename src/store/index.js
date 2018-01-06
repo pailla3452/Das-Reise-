@@ -72,6 +72,13 @@ export const store = new Vuex.Store({
         description: payload.description,
         date: payload.date
       }
+      firebase.database().ref('travels').push(travel)
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
       commit('createTravel', travel)
     }
   }
