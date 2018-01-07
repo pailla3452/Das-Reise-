@@ -60,12 +60,7 @@
     data () {
       return {
         sideNav: false,
-        toolbarInfo: {
-          icon: '',
-          text: 'Reise!',
-          color: 'primary',
-          colorFluid: 'primary--text'
-        }
+        toolbarInfo: this.$store.getters.toolbarInfo
       }
     },
     computed: {
