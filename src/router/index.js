@@ -6,6 +6,7 @@ import Home from '@/components/Home'
 import Signin from '@/components/User/Signin'
 import Signup from '@/components/User/Signup'
 import World from '@/components/Maps/World'
+import Place from '@/components/Maps/Place'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/world',
       name: 'World',
       component: World
+    },
+    {
+      path: '/place',
+      name: 'Place',
+      component: Place
     }
   ]
 })

@@ -11,21 +11,20 @@ import router from './router'
 import { store } from './store'
 
 import firebase from 'firebase'
-import * as VueGoogleMaps from 'vue2-google-maps'
-Vue.use(Vuetify)
 
+Vue.use(Vuetify)
 Vue.config.productionTip = false
 
+// GOOGLE MAPS API
+// New in 0.4.0
+import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyCtmVUKBiRVDgRrgP-DcNb7NcgRjasNHNg ',
-    v: '3',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
+    key: 'AIzaSyA7tiqTA0AoTOzCuZGd1lT26sDXGZulQwc'
+    // libraries: 'places', //// If you need to use place input
   }
 })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
