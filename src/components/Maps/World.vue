@@ -10,7 +10,9 @@
       :position="m.position"
       :clickable="true"
       :draggable="true"
-      @click="center=m.position"
+      :editable="true"
+      @click="onSelect(m)"
+      @dragend="onNewPosition(m)"
     ></gmap-marker>
   </gmap-map>
 </template>
@@ -20,12 +22,21 @@
 export default {
   data () {
     return {
-      center: {lat: 10.0, lng: 10.0},
-      markers: [{
-        position: {lat: 10.0, lng: 10.0}
-      }, {
-        position: {lat: 11.0, lng: 11.0}
-      }]
+      center: {lat: 52.5170365, lng: 13.3888599},
+      markers: [
+        {
+          position: {lat: 52.5170365, lng: 13.3888599}
+        },
+        {
+          position: {lat: 39.0046949, lng: 125.7358714}
+        }
+      ]
+    }
+  },
+  methods: {
+    onSelect (m) {
+      console.log(m.getPosition())
+      this.center = m.position
     }
   }
   // watch: {

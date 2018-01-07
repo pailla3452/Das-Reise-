@@ -17,6 +17,9 @@ export const store = new Vuex.Store({
   mutations: {
     setUser (state, payload) {
       state.user = payload
+    },
+    createTravel (state, payload) {
+      state.loadedTravels.push(payload)
     }
   },
   getters: {
@@ -60,6 +63,23 @@ export const store = new Vuex.Store({
     logOut ({commit}, payload) {
       firebase.auth().signOut()
       commit('setUser', null)
+    },
+    createTravel ({commit}, payload) {
+      const travel = {
+        title: payload.title,
+        country: payload.country,
+        imageUrl: payload.imageUrl,
+        description: payload.description,
+        date: payload.date
+      }
+      firebase.database().ref('travels').push(travel)
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      commit('createTravel', travel)
     }
   }
 })
