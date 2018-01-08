@@ -8,18 +8,18 @@
               <v-carousel-item v-for="(image,i) in place.imgLink" :src="image" :key="i"></v-carousel-item>
             </v-carousel>
           </v-card-media>
-          <v-card-text>
+          <v-card-title>
             <v-layout raw wrap>
-              <v-flex xs12 sm6 text-xs-center>
+              <v-flex xs12 text-xs-center>
                 <v-card dark color="green">
                   <v-card-text class="px-0">12</v-card-text>
                 </v-card>
                 <!-- <h3 class="headline mb-0">{{place.title}}</h3>
                 <p>{{place.comment}}</p> -->
               </v-flex>
-            </v-layout raw wrap>
-            <v-layout>
-              <v-flex xs12 sm6 text-xs-center>
+            </v-layout>
+            <v-layout raw wrap>
+              <v-flex xs12 text-xs-center>
                 <v-card dark color="green">
                   <v-card-text class="px-0">12</v-card-text>
                 </v-card>
@@ -40,7 +40,7 @@
                 </gmap-map> -->
               </v-flex>
             </v-layout>
-          </v-card-text>
+          </v-card-title>
           <!-- <v-card-text>
             <h1>Yaaaii</h1>
           </v-card-text> -->
