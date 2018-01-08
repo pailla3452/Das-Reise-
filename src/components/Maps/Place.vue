@@ -10,7 +10,7 @@
           </v-card-media>
           <v-card-text>
             <v-layout raw wrap>
-              <v-flex xs12 sm6 text-xs-center>
+              <v-flex xs12 sm12 text-xs-center>
                 <v-card dark color="green">
                   <v-card-text class="px-0">12</v-card-text>
                 </v-card>
@@ -19,7 +19,7 @@
               </v-flex>
             </v-layout raw wrap>
             <v-layout>
-              <v-flex xs12 sm6 text-xs-center>
+              <v-flex xs12 sm12 text-xs-center>
                 <v-card dark color="green">
                   <v-card-text class="px-0">12</v-card-text>
                 </v-card>
