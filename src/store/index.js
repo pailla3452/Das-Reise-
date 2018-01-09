@@ -13,7 +13,7 @@ export const store = new Vuex.Store({
       colorFluid: 'primary--text'
     },
     user: null,
-    places: [
+    travels: [
       {
         // TODO OCUPAR USARIOS QUE FUNCIONEN
         id: 'ysgdcjzhtgrfeyrgfhcfrygx',
@@ -76,7 +76,7 @@ export const store = new Vuex.Store({
       state.user = payload
     },
     createTravel (state, payload) {
-      state.loadedTravels.push(payload)
+      state.travels.push(payload)
     }
   },
   actions: {
@@ -84,7 +84,8 @@ export const store = new Vuex.Store({
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((user) => {
           const newUser = {
-            id: user.uid
+            id: user.uid,
+            userName: payload.userName
           }
           console.log(newUser)
           commit('setUser', {id: newUser.id})
@@ -115,6 +116,7 @@ export const store = new Vuex.Store({
     },
     createTravel ({commit}, payload) {
       const travel = {
+        idUser: this.state.user.id,
         title: payload.title,
         country: payload.country,
         imageUrl: payload.imageUrl,
@@ -138,13 +140,13 @@ export const store = new Vuex.Store({
     user (state) {
       return state.user
     },
-    loadedPlaces (state) {
-      return state.places
+    loadedTravels (state) {
+      return state.travels
     },
-    loadedPlace (state) {
-      return (idPlace) => {
-        return state.places.find((place) => {
-          return place.id === idPlace
+    loadedTravel (state) {
+      return (idTravel) => {
+        return state.travels.find((travel) => {
+          return travel.id === idTravel
         })
       }
     }
