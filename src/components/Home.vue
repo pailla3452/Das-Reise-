@@ -1,18 +1,7 @@
 <template>
-  <v-container>
-    <v-layout row wrap>
-      </v-flex>
-        <v-flex xs12 sm6 class="text-xs-center text-sm-left">
-          <v-btn large router to="/place" class="info">Suchen Land</v-btn>
-        </v-flex>
-        <v-flex xs12 sm4 class="text-xs-center text-sm-right">
-          <v-btn large router to="/ville/new" class="info">Suchen Stadt</v-btn>
-      </v-flex>
-      <v-flex xs12 sm1 class="text-xs-center text-sm-right">
-        <v-btn large router to="/ville/new" class="info">Hinzufügen Stadt</v-btn>
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap class="mt-2">
+  <v-container fluid>
+
+  <!--  <v-layout row wrap class="mt-2">
       <v-flex xs12>
         <v-carousel delimiter-icon="stop">
           <v-carousel-item
@@ -25,7 +14,39 @@
           </v-carousel-item>
         </v-carousel>
       </v-flex>
+    </v-layout> -->
+  <!--  <div >
+      <img src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg" >
+     </div>
+-->
+    </div>
+    <v-layout id="opacidad">
+      <v-flex sm12>
+        <v-card>
+          <v-card-media class="white--text" src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg"  height="700px" >
+            <span>Pruebas</span>
+          </v-card-media>
+        </v-card>
+      </v-flex>
+      <!--  <img src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg" id="opacidad">  -->
+
     </v-layout>
+
+
+
+    <v-layout row wrap>
+      </v-flex>
+        <v-flex xs12 sm6 class="text-xs-center text-sm-left">
+          <v-btn large router to="/place" class="info">Suchen Land</v-btn>
+        </v-flex>
+        <v-flex xs12 sm4 class="text-xs-center text-sm-right">
+          <v-btn large router to="/ville/new" class="info">Suchen Stadt</v-btn>
+      </v-flex>
+      <v-flex xs12 sm1 class="text-xs-center text-sm-right">
+        <v-btn large router to="/ville/new" class="info">Hinzufügen Stadt</v-btn>
+      </v-flex>
+    </v-layout>
+
     <v-layout row wrap  class="mt-0">
       <v-flex xs12 class="text-xs-center">
        <h2>Reisen der Welt mit uns !!!!</h2>
@@ -50,12 +71,8 @@
 </script>
 
 <style scoped>
-  .title {
-    position: absolute;
-    bottom: 50px;
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    font-size: 2em;
-    padding: 20px;
+  #opacidad {
+    filter: brightness(70%);
+
   }
 </style>
