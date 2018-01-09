@@ -119,18 +119,39 @@ export const store = new Vuex.Store({
         idUser: this.state.user.id,
         title: payload.title,
         country: payload.country,
-        imageUrl: payload.imageUrl,
         description: payload.description,
         date: payload.date
       }
+      let imageUrl
+      let key
       firebase.database().ref('travels').push(travel)
         .then((data) => {
-          console.log(data)
+          key = data.key
+          // commit('createTravel', {
+            // travel,
+            // id: key
+          // })
+          return key
+        })
+        .then(key => {
+          const filename = payload.image.name
+          const ext = filename.slice(filename.lastIndexOf('.'))
+          return firebase.storage().ref('travels/' + key + '.' + ext).put(payload.image)
+        })
+        .then(fileData => {
+          imageUrl = fileData.metadata.downloadURLs[0]
+          return firebase.database().ref('travels').child(key).update({imageUrl: imageUrl})
+        })
+        .then(() => {
+          commit('createTravel', {
+            travel,
+            imageUrl: imageUrl,
+            id: key
+          })
         })
         .catch((error) => {
           console.log(error)
         })
-      commit('createTravel', travel)
     }
   },
   getters: {

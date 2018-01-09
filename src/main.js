@@ -38,7 +38,8 @@ new Vue({
       apiKey: 'AIzaSyCtmVUKBiRVDgRrgP-DcNb7NcgRjasNHNg',
       authDomain: 'das-reise.firebaseapp.com',
       databaseURL: 'https://das-reise.firebaseio.com',
-      projectId: 'das-reise'
+      projectId: 'das-reise',
+      storageBucket: 'gs://das-reise.appspot.com'
     }
     firebase.initializeApp(config)
     firebase.auth().onAuthStateChanged((user) => {

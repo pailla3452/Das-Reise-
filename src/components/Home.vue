@@ -18,6 +18,7 @@
           <v-carousel-item
             v-for="ville in villes"
             :src="ville.imageUrl"
+            class="brightness"
             :key="ville.id">
             <div class="title">
               {{ ville.title }}
@@ -57,5 +58,8 @@
     color: white;
     font-size: 2em;
     padding: 20px;
+  }
+  .brightness {
+     filter: brightness(150%);
   }
 </style>
