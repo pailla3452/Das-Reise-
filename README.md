@@ -1,7 +1,7 @@
 # Das Reise!!!  ☺
 
 > Site de voyage. Ici les personnes peuvent partager leurs experiences à l'étranger!
-> Ce site a été créé avec Vuejs, Vuetify, Vuex et la base des données et geré avec Firebase.
+> Ce site a été créé avec Vuejs, Vuetify, Vuex et la base des données est geré avec Firebase.
 ## Rôle des associés du groupe
 
 ``` bash
