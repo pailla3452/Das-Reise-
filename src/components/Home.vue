@@ -23,15 +23,16 @@
     <v-layout id="opacidad">
       <v-flex sm12>
         <v-card>
-          <v-card-media class="white--text" src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg"  height="700px" >
-            <span>Pruebas</span>
+          <v-card-media class="white--text"  height="700px" >
+            <v-carousel>
+              <v-carousel-item v-for="(item,i) in places" v-bind:src="item.imageUrl" :key="i"></v-carousel-item>
+            </v-carousel>
           </v-card-media>
         </v-card>
       </v-flex>
       <!--  <img src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg" id="opacidad">  -->
 
     </v-layout>
-
 
 
     <v-layout row wrap>
@@ -65,6 +66,11 @@
           { imageUrl: 'https://farm5.static.flickr.com/4049/5154044346_f8f3dd4d38_b.jpg', id: 'Barcelona', title: 'Barcelona Stadt' },
           { imageUrl: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WUS5VgH/queens-new-york-city-ghetto-projects-nyc-poverty-projects-graffiti-hood-subway_v1ueli_o__F0000.png', id: 'aadsfhbkhlk1241', title: 'New York Stadt' }
         ]
+      }
+    },
+    computed: {
+      places () {
+        return this.$store.getters.loadedTravels
       }
     }
   }
