@@ -49,14 +49,16 @@
                   :center="center"
                   :zoom="7"
                   style="width: 100%; height: 350px"
+                  map-type-id="satellite"
                   >
                   <gmap-marker
                   :key="index"
                   v-for="(m, index) in markers"
-                  :position="m.position"
+                  :position="{lat: 59.327, lng: 18.067}"
                   :clickable="true"
                   :draggable="true"
                   @click="center=m.position"
+                  @dragend="onDrag(marker.position)" // no functina :(
                   ></gmap-marker>
                 </gmap-map>
               </v-flex>
@@ -112,11 +114,9 @@ export default {
       idTravel: 'ysgdcjzhtgrfeyrgfhcfrygx',
       likes: 12,
       travel: '',
-      center: {lat: 10.0, lng: 10.0},
+      center: {lat: 50, lng: 50},
       markers: [{
-        position: {lat: 10.0, lng: 10.0}
-      }, {
-        position: {lat: 11.0, lng: 11.0}
+        position: {lat: 50, lng: 50}
       }]
     }
   },
@@ -124,6 +124,9 @@ export default {
     this.travel = this.$store.getters.loadedTravel(this.idTravel)
   },
   methods: {
+    onDrag (arg) {
+      console.log(arg)
+    },
     onLike () {
       this.likes += 1
     }

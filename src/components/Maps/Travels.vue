@@ -50,5 +50,4 @@ export default {
 .brightness {
    filter: brightness(40%);
 }
-.
 </style>
