@@ -108,10 +108,9 @@
 
 <script>
 export default {
-  // props: ['idTravel'],
+  props: ['id'],
   data () {
     return {
-      idTravel: 'ysgdcjzhtgrfeyrgfhcfrygx',
       likes: 12,
       travel: '',
       center: {lat: 50, lng: 50},
@@ -121,7 +120,8 @@ export default {
     }
   },
   created () {
-    this.travel = this.$store.getters.loadedTravel(this.idTravel)
+    console.log('ID : ' + this.id)
+    this.travel = this.$store.getters.loadedTravel(this.id)
   },
   methods: {
     onDrag (arg) {
