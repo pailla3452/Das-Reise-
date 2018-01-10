@@ -5,6 +5,10 @@
         <v-card>
           <v-card-text>
             <v-container>
+              <h3 class="text-xs-center">Begleiten Sie uns</h3>
+              <v-flex xs12 class="text-xs-center mb-3 mt-2">
+                <v-icon x-large>fingerprint</v-icon>
+              </v-flex>
               <form @submit.prevent="onSignup">
                 <v-layout row>
                   <v-flex xs12>

@@ -7,6 +7,7 @@
           <v-carousel-item
             v-for="ville in villes"
             :src="ville.imageUrl"
+            class="brightness"
             :key="ville.id">
             <div class="title">
               {{ ville.title }}
@@ -23,9 +24,13 @@
     <v-layout id="opacidad">
       <v-flex sm12>
         <v-card>
-          <v-card-media class="white--text"  height="700px" >
+          <v-card-media class="white--text">
             <v-carousel>
-              <v-carousel-item v-for="(item,i) in places" v-bind:src="item.imageUrl" :key="i"></v-carousel-item>
+              <v-carousel-item v-for="(item,i) in places" v-bind:src="item.imageUrl" :key="i">
+                <div class="title">
+                  {{item.title}}
+                </div>
+              </v-carousel-item>
             </v-carousel>
           </v-card-media>
         </v-card>
@@ -34,6 +39,11 @@
 
     </v-layout>
 
+    <v-layout row wrap  class="mt-0">
+      <v-flex xs12 class="text-xs-center">
+       <h2 style="color: rgb(46, 247, 237)">Reisen der Welt mit uns !!!!</h2>
+      </v-flex>
+    </v-layout>
 
     <v-layout row wrap>
       </v-flex>
@@ -48,11 +58,7 @@
       </v-flex>
     </v-layout>
 
-    <v-layout row wrap  class="mt-0">
-      <v-flex xs12 class="text-xs-center">
-       <h2>Reisen der Welt mit uns !!!!</h2>
-      </v-flex>
-    </v-layout>
+
   </v-container>
 </template>
 
@@ -80,5 +86,8 @@
   #opacidad {
     filter: brightness(70%);
 
+  }
+  .brightness {
+     filter: brightness(150%);
   }
 </style>
