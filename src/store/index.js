@@ -13,57 +13,7 @@ export const store = new Vuex.Store({
       colorFluid: 'primary--text'
     },
     user: null,
-    travels: [
-      {
-        // TODO OCUPAR USARIOS QUE FUNCIONEN
-        id: 'ysgdcjzhtgrfeyrgfhcfrygx',
-        idUser: 'iuhaefiushgiuer325i2wurh',
-        title: 'Cool ice creams',
-        // Carousel
-        imgLink: [
-          'http://www.pointsnearmenow.com/wp-content/uploads/2017/02/image-12.jpg',
-          'http://www.seriouseats.com/images/2014/06/20140627-best-ice-cream-chicago-margies-candies-matt-kirouac.jpg',
-          'http://bluemonkbflo.com/wp-content/uploads/2017/04/ice-cream.jpg'
-        ],
-        comment: 'Meilleures glaces du monde :D',
-        position: {lat: 0, lng: 0},
-        commentSection: [
-          {username: 'Paillita32', comment: 'lol u mad?', replies: []}
-        ]
-      },
-      {
-        id: 'agdfxbvweeafgbefw<syvd',
-        idUser: 'clqui3hrbow57tge5',
-        title: 'Place for 3D printing! Plain Palais',
-        // Carousel
-        imgLink: [
-          'https://www.fablabs.io/media/W1siZiIsIjIwMTcvMDEvMjgvMTMvNDcvNDMvN2E3MTg3MTMtNTA0Yi00ZWQ5LWJlZDctMjI0ODdjODBhOGNlL0ZhYmxhYiBCcnVzc2Vscy5qcGciXSxbInAiLCJ0aHVtYiIsIjgwMHgiXV0/Fablab%20Brussels.jpg?sha=aa0dc0dd0796319f',
-          'https://www.onefm.ch/wp-content/uploads/2017/12/geneva-lux-1000x600.jpg',
-          'http://www.fablabni.com/sites/default/files/styles/mobilecustom_user_desktop_1x/public/field/image/DSC04835-itok=Q7M-l3ak.JPG'
-        ],
-        comment: 'Build Objects for FREE! Spaceships and stuff',
-        position: {lat: 0, lng: 0},
-        commentSection: [
-          {username: 'DanielQliao_42', comment: '', replies: []}
-        ]
-      },
-      {
-        id: 'dyvxgrfesdyxbdefs',
-        idUser: 'oiajfoijergksen',
-        title: 'Cat invasion D: (Gare Cornavin)',
-        // Carousel
-        imgLink: [
-          'https://cdn.theatlantic.com/assets/media/img/photo/2015/03/aoshima-japans-cat-island/c11_RTR4RUIQ/main_900.jpg?1425394297',
-          'https://i.pinimg.com/736x/73/62/a0/7362a0857539769fed98af2001d37135--space-cat-original-version.jpg',
-          'https://i.ytimg.com/vi/uwmeH6Rnj2E/hqdefault.jpg'
-        ],
-        comment: 'HELP! A group of cats have taken the west coast D:',
-        position: {lat: 0, lng: 0},
-        commentSection: [
-          {username: 'LosMech@dD', comment: 'Bull***, u mad?', replies: []}
-        ]
-      }
-    ],
+    travels: [],
     center: {lat: 10.0, lng: 10.0},
     markers: [{
       position: {lat: 10.0, lng: 10.0}
@@ -77,9 +27,34 @@ export const store = new Vuex.Store({
     },
     createTravel (state, payload) {
       state.travels.push(payload)
+    },
+    setLoadedTravels (state, payload) {
+      state.travels = payload
     }
   },
   actions: {
+    loadData ({commit}, payload) {
+      // FIREBASE
+      firebase.database().ref('travels').once('value')
+      .then((data) => {
+        const travels = []
+        const obj = data.val()
+        for (let key in obj) {
+          travels.push({
+            id: key,
+            idUser: obj[key].idUser,
+            title: obj[key].title,
+            country: obj[key].country,
+            imageUrl: obj[key].imageUrl,
+            description: obj[key].description,
+            position: obj[key].position,
+            date: obj[key].date,
+            likes: obj[key].likes
+          })
+        }
+        commit('setLoadedTravels', travels)
+      })
+    },
     signUserUp ({commit}, payload) {
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((user) => {
@@ -121,7 +96,8 @@ export const store = new Vuex.Store({
         country: payload.country,
         description: payload.description,
         position: payload.position,
-        date: payload.date
+        date: payload.date,
+        likes: 0
       }
       let imageUrl
       let key

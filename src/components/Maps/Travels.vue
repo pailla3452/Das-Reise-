@@ -16,7 +16,7 @@
                       <v-flex xs12>
                         <div>
                           <div class="headline">{{travel.title}}</div>
-                          <div>{{travel.comment}}</div>
+                          <div>{{travel.description}}</div>
                         </div>
                       </v-flex>
                     </v-layout>
@@ -49,7 +49,7 @@
                 </v-flex>
                 <v-flex xs7>
                     <v-card-media
-                      :src="travel.imgLink[0]"
+                      :src="travel.imageUrl"
                       height="300px"
                       contain
                     ></v-card-media>
@@ -66,7 +66,7 @@
 export default {
   data () {
     return {
-      travels: ''
+      travels: 'asdasd'
     }
   },
   created () {
@@ -75,10 +75,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-.aidi {
-   filter: brightness(40%);
-}
-
-</style>
