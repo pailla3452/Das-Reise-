@@ -24,8 +24,7 @@
     <v-layout id="opacidad">
       <v-flex sm12>
         <v-card>
-          <v-card-media class="white--text" src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg"  height="700px" >
-            <span>Pruebas</span>
+          <v-card-media class="white--text" src="https://static1.visitestonia.com/images/2920525/weekendfestivalbaltic.jpg"  height="475px">
           </v-card-media>
         </v-card>
       </v-flex>
@@ -33,7 +32,11 @@
 
     </v-layout>
 
-
+    <v-layout row wrap  class="mt-0">
+      <v-flex xs12 class="text-xs-center">
+       <h2 style="color: rgb(46, 247, 237)">Reisen der Welt mit uns !!!!</h2>
+      </v-flex>
+    </v-layout>
 
     <v-layout row wrap>
       </v-flex>
@@ -48,11 +51,7 @@
       </v-flex>
     </v-layout>
 
-    <v-layout row wrap  class="mt-0">
-      <v-flex xs12 class="text-xs-center">
-       <h2>Reisen der Welt mit uns !!!!</h2>
-      </v-flex>
-    </v-layout>
+
   </v-container>
 </template>
 

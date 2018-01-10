@@ -9,6 +9,7 @@ import World from '@/components/Maps/World'
 import Travel from '@/components/Maps/Travel'
 import Travels from '@/components/Maps/Travels'
 import MyTravels from '@/components/Maps/MyTravels'
+import Profil from '@/components/User/Profil'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/MyTravels',
       name: 'Meine Reisen',
       component: MyTravels
+    },
+    {
+      path: '/Profil',
+      name: '/Profil',
+      component: Profil
     }
   ]
 })

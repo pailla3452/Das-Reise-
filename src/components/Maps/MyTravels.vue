@@ -49,7 +49,7 @@
               </gmap-map>
             </v-flex>
           </v-layout>
-          <v-layout row>
+          <v-layout row class="mt-5">
             <v-flex xs12 sm6 offset-sm3>
               <v-btn raised class="primary" @click="onPickFile">Choissez une photo </v-btn>
               <input type="file" style="display: none" ref="fileInput" accept="image/*" @change="onFilePicked">
