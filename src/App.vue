@@ -66,18 +66,18 @@
     computed: {
       menuItems () {
         let menuItems = [
-          {icon: 'receipt', title: 'All Travels', link: 'Travels'},
-          {icon: 'explore', title: 'Maps', link: '/world'},
+          {icon: 'receipt', title: 'Alle Reisen', link: 'Travels'},
+          {icon: 'explore', title: 'Karten', link: '/world'},
           {icon: ''},
-          {icon: 'face', title: 'Sign up', link: '/signup'},
-          {icon: 'lock_open', title: 'Sign in', link: '/signin'}
+          {icon: 'face', title: 'Anmeldung', link: '/signup'},
+          {icon: 'lock_open', title: 'Verbindung', link: '/signin'}
 
         ]
         if (this.userIsAuthenticated) {
           menuItems = [
             {icon: 'account_circle', title: 'Profil', link: '/Profil'},
             {icon: 'flight', title: 'Meine Reisen', link: '/MyTravels'},
-            {icon: 'receipt', title: 'All Travels', link: 'Travels'},
+            {icon: 'receipt', title: 'Alle Reisen', link: 'Travels'},
             {icon: 'explore', title: 'Forscher', link: '/world'}
           ]
         }

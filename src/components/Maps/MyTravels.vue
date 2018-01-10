@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
-        <h4>Ajouter votre voyage:</h4>
+        <h4>Fügen Sie Ihre Reise hinzu</h4>
       </v-flex>
     </v-layout>
     <v-layout row>
@@ -12,7 +12,7 @@
             <v-flex xs12 sm6 offset-sm3>
               <v-text-field
                 name="title"
-                label="Titre de votre voyage / déstination"
+                label="Fügen Sie Ihre Reise hinzu"
                 id="title"
                 v-model="title"
                 required></v-text-field>
@@ -22,7 +22,7 @@
             <v-flex xs12 sm6 offset-sm3>
               <v-select
                 autocomplete
-                label="Pays"
+                label="Land"
                 placeholder="Select..."
                 :rules="[() => !!country || 'This field is required']"
                 :items="countries"
@@ -51,7 +51,7 @@
           </v-layout>
           <v-layout row class="mt-5">
             <v-flex xs12 sm6 offset-sm3>
-              <v-btn raised class="primary" @click="onPickFile">Choissez une photo </v-btn>
+              <v-btn raised class="primary" @click="onPickFile">Wähle ein Foto aus</v-btn>
               <input type="file" style="display: none" ref="fileInput" accept="image/*" @change="onFilePicked">
             </v-flex>
           </v-layout>
@@ -64,7 +64,7 @@
             <v-flex xs12 sm6 offset-sm3>
               <v-text-field
                 name="description"
-                label="Détaillez votre expérience:"
+                label="detailliere deine Erfahrung:"
                 id="description"
                 multi-line
                 v-model="description"
@@ -76,7 +76,7 @@
               <v-btn
                 class="primary"
                 :disabled="!formIsValid"
-                type="submit">Publiez votre expérience !!!</v-btn>
+                type="submit">Veröffentliche deine Erfahrung !!!</v-btn>
             </v-flex>
           </v-layout>
         </form>

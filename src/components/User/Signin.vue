@@ -21,7 +21,7 @@
                   <v-flex xs12>
                     <v-text-field
                       name="password"
-                      label="Password"
+                      label="Passwort"
                       id="password"
                       v-model="password"
                       type="password"
@@ -30,7 +30,7 @@
                 </v-layout>
                 <v-layout row>
                   <v-flex xs12>
-                    <v-btn type="submit">Sign in</v-btn>
+                    <v-btn type="submit">Verbindung</v-btn>
                   </v-flex>
                 </v-layout>
               </form>
