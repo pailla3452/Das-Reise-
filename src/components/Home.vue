@@ -26,7 +26,11 @@
         <v-card>
           <v-card-media class="white--text">
             <v-carousel>
-              <v-carousel-item v-for="(item,i) in places" v-bind:src="item.imageUrl" :key="i">
+              <v-carousel-item style="cursor: pointer;"
+              v-for="(item,i) in places"
+              v-bind:src="item.imageUrl"
+              :key="i"
+              @click="goTravel(item.id)">
                 <div class="title">
                   {{item.title}}
                 </div>
@@ -48,13 +52,13 @@
     <v-layout row wrap>
       </v-flex>
         <v-flex xs12 sm6 class="text-xs-center text-sm-left">
-          <v-btn large router to="/Profil" class="info">Suchen Land</v-btn>
+          <v-btn large router to="/place" class="info">Suchen Land</v-btn>
         </v-flex>
         <v-flex xs12 sm4 class="text-xs-center text-sm-right">
-          <v-btn large router to="/Profil" class="info">Suchen Stadt</v-btn>
+          <v-btn large router to="/ville/new" class="info">Suchen Stadt</v-btn>
       </v-flex>
       <v-flex xs12 sm1 class="text-xs-center text-sm-right">
-        <v-btn large router to="/Profil" class="info">Hinzufügen Stadt</v-btn>
+        <v-btn large router to="/ville/new" class="info">Hinzufügen Stadt</v-btn>
       </v-flex>
     </v-layout>
 
@@ -78,19 +82,17 @@
       places () {
         return this.$store.getters.loadedTravels
       }
+    },
+    methods: {
+      goTravel (id) {
+        this.$router.push('/travels/' + id)
+      }
     }
   }
 </script>
 
 <style scoped>
-  #opacidad {
-    filter: brightness(70%);
-
-  }
-  .brightness {
-     filter: brightness(150%);
-  }
-  .title {
+.title {
     position: absolute;
     bottom: 50px;
     background-color: rgba(0,0,0,0.5);
