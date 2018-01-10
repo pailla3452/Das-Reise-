@@ -120,6 +120,7 @@ export const store = new Vuex.Store({
         title: payload.title,
         country: payload.country,
         description: payload.description,
+        position: payload.position,
         date: payload.date
       }
       let imageUrl

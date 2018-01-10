@@ -35,7 +35,8 @@ export default new Router({
       component: World
     },
     {
-      path: '/travel',
+      path: '/travels/:id',
+      props: true,
       name: 'Travel',
       component: Travel
     },
