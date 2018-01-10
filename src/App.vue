@@ -66,7 +66,7 @@
     computed: {
       menuItems () {
         let menuItems = [
-          {icon: 'receipt', title: 'All Travels', link: 'AllTravels'},
+          {icon: 'receipt', title: 'All Travels', link: '/mytravels'},
           {icon: 'explore', title: 'Maps', link: '/world'},
           {icon: '', title: '', link: ''},
           {icon: 'face', title: 'Sign up', link: '/signup'},

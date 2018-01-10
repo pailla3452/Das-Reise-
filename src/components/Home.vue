@@ -3,7 +3,7 @@
     <v-layout row wrap>
       </v-flex>
         <v-flex xs12 sm6 class="text-xs-center text-sm-left">
-          <v-btn large router to="/place" class="info">Suchen Land</v-btn>
+          <v-btn large router to="/travel" class="info">Suchen Land</v-btn>
         </v-flex>
         <v-flex xs12 sm4 class="text-xs-center text-sm-right">
           <v-btn large router to="/ville/new" class="info">Suchen Stadt</v-btn>

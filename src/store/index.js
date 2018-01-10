@@ -121,6 +121,7 @@ export const store = new Vuex.Store({
         country: payload.country,
         imageUrl: payload.imageUrl,
         description: payload.description,
+        position: payload.position,
         date: payload.date
       }
       firebase.database().ref('travels').push(travel)

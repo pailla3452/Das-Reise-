@@ -7,20 +7,50 @@
     </v-layout>
     <v-layout v-for="(travel, i) in travels" :key="i" class="mt-2">
       <v-flex xs12>
-          <v-card color="pink darken-1" class="white--text">
+          <v-card color="blue-grey darken-1" class="white--text">
             <v-container fluid grid-list-lg>
               <v-layout row>
-                <v-flex xs7>
+                <v-flex xs5>
                   <div>
-                    <div class="headline">{{travel.title}}</div>
-                    <div>{{travel.comment}}</div>
+                    <v-layout>
+                      <v-flex xs12>
+                        <div>
+                          <div class="headline">{{travel.title}}</div>
+                          <div>{{travel.comment}}</div>
+                        </div>
+                      </v-flex>
+                    </v-layout>
+                    <v-layout>
+                      <v-flex xs12>
+                        <div class="mt-5">
+                        </div>
+                      </v-flex>
+                    </v-layout>
+                    <v-layout>
+                      <v-flex xs12>
+                        <div class="mt-5">
+                        </div>
+                      </v-flex>
+                    </v-layout>
+                    <v-layout>
+                      <v-flex xs12>
+                        <div class="mt-5">
+                        </div>
+                      </v-flex>
+                    </v-layout>
+                    <v-layout>
+                      <v-flex xs12>
+                        <div class="">
+                          <v-btn :to="'/travels/' + travel.id">See more</v-btn>
+                        </div>
+                      </v-flex>
+                    </v-layout>
                   </div>
                 </v-flex>
-                <v-flex xs5>
+                <v-flex xs7>
                     <v-card-media
                       :src="travel.imgLink[0]"
-                      height="175px"
-                      class="brightness"
+                      height="300px"
                       contain
                     ></v-card-media>
                 </v-flex>
@@ -47,7 +77,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.brightness {
+.aidi {
    filter: brightness(40%);
 }
 
